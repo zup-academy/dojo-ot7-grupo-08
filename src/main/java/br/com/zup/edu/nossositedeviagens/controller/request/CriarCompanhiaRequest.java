@@ -23,9 +23,13 @@ public class CriarCompanhiaRequest {
         this.paisId = paisId;
     }
 
-    public Companhia toModel(PaisRepository paisRepository) {
+    public Optional<Companhia> toModel(PaisRepository paisRepository) {
         Optional<Pais> paisObj = paisRepository.findById(this.paisId);
-        Pais pais = paisObj.get();
-        return new Companhia(this.nome, pais);
+        if(paisObj.isPresent()) {
+            Pais pais = paisObj.get();
+            return Optional.of(new Companhia(this.nome, pais));
+        }
+
+        return Optional.empty();
     }
 }

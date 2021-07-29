@@ -22,4 +22,8 @@ public class Companhia {
         this.dataCriacao = LocalDateTime.now();
         this.pais = pais;
     }
+
+    public Long getId() {
+        return id;
+    }
 }
