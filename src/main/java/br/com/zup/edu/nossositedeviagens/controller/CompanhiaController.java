@@ -1,4 +1,4 @@
-package br.com.zup.edu.nossositedeviagens;
+package br.com.zup.edu.nossositedeviagens.controller;
 
 import br.com.zup.edu.nossositedeviagens.repository.CompanhiaRepository;
 import br.com.zup.edu.nossositedeviagens.repository.PaisRepository;
