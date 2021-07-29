@@ -28,12 +28,12 @@ public class CompanhiaController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> cadastrar(@RequestBody @Valid CriarCompanhiaRequest companhiaRequest) {
+    public ResponseEntity<Void> cadastrar(@RequestBody @Valid CriarCompanhiaRequest companhiaRequest, UriComponentsBuilder builder) {
         Optional<Companhia> companhiaObj = companhiaRequest.toModel(paisRepository);
         if(companhiaObj.isPresent()) {
             Companhia companhia = companhiaObj.get();
             repository.save(companhia);
-            URI uri = UriComponentsBuilder.fromPath("/companhias/{id}").buildAndExpand(companhia.getId()).toUri();
+            URI uri = builder.path("/companhias/{id}").buildAndExpand(companhia.getId()).toUri();
             return ResponseEntity.created(uri).build();
         }
 
