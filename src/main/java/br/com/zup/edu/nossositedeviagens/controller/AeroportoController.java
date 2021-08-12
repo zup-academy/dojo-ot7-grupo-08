@@ -2,7 +2,7 @@ package br.com.zup.edu.nossositedeviagens.controller;
 
 import br.com.zup.edu.nossositedeviagens.controller.request.AeroportoRequest;
 import br.com.zup.edu.nossositedeviagens.model.Aeroporto;
-import br.com.zup.edu.nossositedeviagens.repository.AerorportoRepository;
+import br.com.zup.edu.nossositedeviagens.repository.AeroportoRepository;
 import br.com.zup.edu.nossositedeviagens.repository.PaisRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +18,10 @@ import java.net.URI;
 @RequestMapping("/aeroportos")
 public class AeroportoController {
 
-    private AerorportoRepository aerorportoRepository;
+    private AeroportoRepository aerorportoRepository;
     private PaisRepository paisRepository;
 
-    public AeroportoController(AerorportoRepository aerorportoRepository, PaisRepository paisRepository) {
+    public AeroportoController(AeroportoRepository aerorportoRepository, PaisRepository paisRepository) {
         this.aerorportoRepository = aerorportoRepository;
         this.paisRepository = paisRepository;
     }
