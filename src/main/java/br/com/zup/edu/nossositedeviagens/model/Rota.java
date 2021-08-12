@@ -14,6 +14,9 @@ public class Rota {
     private Aeroporto destino;
     private Integer duracao;
 
+    @ManyToOne
+    private Voo voo;
+
     public Rota(String nome, Aeroporto origem, Aeroporto destino, Integer duracao) {
         this.nome = nome;
         this.origem = origem;
